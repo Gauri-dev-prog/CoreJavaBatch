@@ -1,0 +1,19 @@
+@RestController
+@RequestMapping("/customers")
+public class CustomerController {
+    @Autowired
+    private CustomerRepository customerRepository;
+
+    @PostMapping("/register")
+    public ResponseEntity<Customer> register(@Valid @RequestBody Customer customer) {
+        return ResponseEntity.ok(customerRepository.save(customer));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Customer> getCustomer(@PathVariable int id) {
+        return customerRepository.findById(id)
+            .map(ResponseEntity::ok)
+            .orElseThrow(() -> new CustomerNotFoundException("Customer not found"));
+    }
+}
+

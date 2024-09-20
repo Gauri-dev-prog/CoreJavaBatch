@@ -1,0 +1,47 @@
+@Entity
+public class CustomerTransaction {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long transactionId;
+    private Long customerId;
+    private double amount;
+    private LocalDate date;
+    
+    public Long getTransactionId() {
+        return transactionId;
+    }
+
+   
+    public void setTransactionId(Long transactionId) {
+        this.transactionId = transactionId;
+    }
+
+    public Long getCustomerId() {
+        return customerId;
+    }
+
+    
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
+    }
+
+   
+    public double getAmount() {
+        return amount;
+    }
+
+    
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+   
+    public LocalDate getDate() {
+        return date;
+    }
+
+    
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+}
