@@ -1,0 +1,112 @@
+2024-09-22 16:04:49.421  INFO G-A-U-R-I --- [           main] c.e.M.Application                        : Starting Application on G-A-U-R-I with PID 3788 (C:\Users\gauri\eclipse-workspace\SpringBootExample\target\classes started by gauri in C:\Users\gauri\eclipse-workspace\SpringBootExample)
+2024-09-22 16:04:49.428 DEBUG G-A-U-R-I --- [           main] c.e.M.Application                        : Running with Spring Boot v2.0.3.RELEASE, Spring v5.0.7.RELEASE
+2024-09-22 16:04:49.429  INFO G-A-U-R-I --- [           main] c.e.M.Application                        : No active profile set, falling back to default profiles: default
+2024-09-22 16:04:49.475  INFO G-A-U-R-I --- [           main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@10c626be: startup date [Sun Sep 22 16:04:49 IST 2024]; root of context hierarchy
+2024-09-22 16:04:50.582  WARN G-A-U-R-I --- [           main] t.m.s.m.ClassPathMapperScanner           : No MyBatis mapper was found in '[com.example.MyProject.dao]' package. Please check your configuration.
+2024-09-22 16:04:50.736  WARN G-A-U-R-I --- [           main] t.m.s.m.ClassPathMapperScanner           : No MyBatis mapper was found in '[com.example.MyProject]' package. Please check your configuration.
+2024-09-22 16:04:50.759  WARN G-A-U-R-I --- [           main] o.m.s.m.ClassPathMapperScanner           : No MyBatis mapper was found in '[com.example.MyProject]' package. Please check your configuration.
+2024-09-22 16:04:51.089 ERROR G-A-U-R-I --- [           main] o.s.b.SpringApplication                  : Application run failed
+java.lang.IllegalStateException: Cannot load configuration class: com.magic80.springbootcommon.interceptor.InterceptorConfiguration
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.enhanceConfigurationClasses(ConfigurationClassPostProcessor.java:414)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanFactory(ConfigurationClassPostProcessor.java:254)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:284)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:128)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:694)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:532)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:395)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1255)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1243)
+	at com.example.MyProject.Application.main(Application.java:14)
+Caused by: java.lang.ExceptionInInitializerError
+	at org.springframework.context.annotation.ConfigurationClassEnhancer.newEnhancer(ConfigurationClassEnhancer.java:122)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer.enhance(ConfigurationClassEnhancer.java:110)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.enhanceConfigurationClasses(ConfigurationClassPostProcessor.java:403)
+	... 12 more
+Caused by: org.springframework.cglib.core.CodeGenerationException: java.lang.reflect.InaccessibleObjectException-->Unable to make protected final java.lang.Class java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain) throws java.lang.ClassFormatError accessible: module java.base does not "opens java.lang" to unnamed module @36902638
+	at org.springframework.cglib.core.ReflectUtils.defineClass(ReflectUtils.java:464)
+	at org.springframework.cglib.core.AbstractClassGenerator.generate(AbstractClassGenerator.java:336)
+	at org.springframework.cglib.core.AbstractClassGenerator$ClassLoaderData$3.apply(AbstractClassGenerator.java:93)
+	at org.springframework.cglib.core.AbstractClassGenerator$ClassLoaderData$3.apply(AbstractClassGenerator.java:91)
+	at org.springframework.cglib.core.internal.LoadingCache$2.call(LoadingCache.java:54)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.springframework.cglib.core.internal.LoadingCache.createEntry(LoadingCache.java:61)
+	at org.springframework.cglib.core.internal.LoadingCache.get(LoadingCache.java:34)
+	at org.springframework.cglib.core.AbstractClassGenerator$ClassLoaderData.get(AbstractClassGenerator.java:116)
+	at org.springframework.cglib.core.AbstractClassGenerator.create(AbstractClassGenerator.java:291)
+	at org.springframework.cglib.core.KeyFactory$Generator.create(KeyFactory.java:221)
+	at org.springframework.cglib.core.KeyFactory.create(KeyFactory.java:174)
+	at org.springframework.cglib.core.KeyFactory.create(KeyFactory.java:153)
+	at org.springframework.cglib.proxy.Enhancer.<clinit>(Enhancer.java:73)
+	... 15 more
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make protected final java.lang.Class java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain) throws java.lang.ClassFormatError accessible: module java.base does not "opens java.lang" to unnamed module @36902638
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:354)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:199)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:193)
+	at org.springframework.cglib.core.ReflectUtils$1.run(ReflectUtils.java:61)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at org.springframework.cglib.core.ReflectUtils.<clinit>(ReflectUtils.java:52)
+	at org.springframework.cglib.core.KeyFactory$Generator.generateClass(KeyFactory.java:243)
+	at org.springframework.cglib.core.DefaultGeneratorStrategy.generate(DefaultGeneratorStrategy.java:25)
+	at org.springframework.cglib.core.AbstractClassGenerator.generate(AbstractClassGenerator.java:329)
+	... 27 more
+2024-09-22 16:04:51.096  INFO G-A-U-R-I --- [           main] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@10c626be: startup date [Sun Sep 22 16:04:49 IST 2024]; root of context hierarchy
+2024-09-22 16:16:57.871  INFO G-A-U-R-I --- [           main] c.e.M.Application                        : Starting Application on G-A-U-R-I with PID 23096 (C:\Users\gauri\eclipse-workspace\SpringBootExample\target\classes started by gauri in C:\Users\gauri\eclipse-workspace\SpringBootExample)
+2024-09-22 16:16:57.877 DEBUG G-A-U-R-I --- [           main] c.e.M.Application                        : Running with Spring Boot v2.0.3.RELEASE, Spring v5.0.7.RELEASE
+2024-09-22 16:16:57.878  INFO G-A-U-R-I --- [           main] c.e.M.Application                        : No active profile set, falling back to default profiles: default
+2024-09-22 16:16:57.927  INFO G-A-U-R-I --- [           main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@201b6b6f: startup date [Sun Sep 22 16:16:57 IST 2024]; root of context hierarchy
+2024-09-22 16:16:59.027  WARN G-A-U-R-I --- [           main] t.m.s.m.ClassPathMapperScanner           : No MyBatis mapper was found in '[com.example.MyProject.dao]' package. Please check your configuration.
+2024-09-22 16:16:59.153  WARN G-A-U-R-I --- [           main] t.m.s.m.ClassPathMapperScanner           : No MyBatis mapper was found in '[com.example.MyProject]' package. Please check your configuration.
+2024-09-22 16:16:59.173  WARN G-A-U-R-I --- [           main] o.m.s.m.ClassPathMapperScanner           : No MyBatis mapper was found in '[com.example.MyProject]' package. Please check your configuration.
+2024-09-22 16:16:59.457 ERROR G-A-U-R-I --- [           main] o.s.b.SpringApplication                  : Application run failed
+java.lang.IllegalStateException: Cannot load configuration class: com.magic80.springbootcommon.interceptor.InterceptorConfiguration
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.enhanceConfigurationClasses(ConfigurationClassPostProcessor.java:414)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanFactory(ConfigurationClassPostProcessor.java:254)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:284)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:128)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:694)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:532)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:395)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1255)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1243)
+	at com.example.MyProject.Application.main(Application.java:14)
+Caused by: java.lang.ExceptionInInitializerError
+	at org.springframework.context.annotation.ConfigurationClassEnhancer.newEnhancer(ConfigurationClassEnhancer.java:122)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer.enhance(ConfigurationClassEnhancer.java:110)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.enhanceConfigurationClasses(ConfigurationClassPostProcessor.java:403)
+	... 12 more
+Caused by: org.springframework.cglib.core.CodeGenerationException: java.lang.reflect.InaccessibleObjectException-->Unable to make protected final java.lang.Class java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain) throws java.lang.ClassFormatError accessible: module java.base does not "opens java.lang" to unnamed module @36902638
+	at org.springframework.cglib.core.ReflectUtils.defineClass(ReflectUtils.java:464)
+	at org.springframework.cglib.core.AbstractClassGenerator.generate(AbstractClassGenerator.java:336)
+	at org.springframework.cglib.core.AbstractClassGenerator$ClassLoaderData$3.apply(AbstractClassGenerator.java:93)
+	at org.springframework.cglib.core.AbstractClassGenerator$ClassLoaderData$3.apply(AbstractClassGenerator.java:91)
+	at org.springframework.cglib.core.internal.LoadingCache$2.call(LoadingCache.java:54)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.springframework.cglib.core.internal.LoadingCache.createEntry(LoadingCache.java:61)
+	at org.springframework.cglib.core.internal.LoadingCache.get(LoadingCache.java:34)
+	at org.springframework.cglib.core.AbstractClassGenerator$ClassLoaderData.get(AbstractClassGenerator.java:116)
+	at org.springframework.cglib.core.AbstractClassGenerator.create(AbstractClassGenerator.java:291)
+	at org.springframework.cglib.core.KeyFactory$Generator.create(KeyFactory.java:221)
+	at org.springframework.cglib.core.KeyFactory.create(KeyFactory.java:174)
+	at org.springframework.cglib.core.KeyFactory.create(KeyFactory.java:153)
+	at org.springframework.cglib.proxy.Enhancer.<clinit>(Enhancer.java:73)
+	... 15 more
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make protected final java.lang.Class java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain) throws java.lang.ClassFormatError accessible: module java.base does not "opens java.lang" to unnamed module @36902638
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:354)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:199)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:193)
+	at org.springframework.cglib.core.ReflectUtils$1.run(ReflectUtils.java:61)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at org.springframework.cglib.core.ReflectUtils.<clinit>(ReflectUtils.java:52)
+	at org.springframework.cglib.core.KeyFactory$Generator.generateClass(KeyFactory.java:243)
+	at org.springframework.cglib.core.DefaultGeneratorStrategy.generate(DefaultGeneratorStrategy.java:25)
+	at org.springframework.cglib.core.AbstractClassGenerator.generate(AbstractClassGenerator.java:329)
+	... 27 more
+2024-09-22 16:16:59.463  INFO G-A-U-R-I --- [           main] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@201b6b6f: startup date [Sun Sep 22 16:16:57 IST 2024]; root of context hierarchy
