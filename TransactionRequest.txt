@@ -1,7 +1,0 @@
-public class TransactionRequest {
-    @NotNull(message = "Name cannot be null")
-    private String name;
-
-    @Email(message = "Email should be valid")
-    private String email;
-}
